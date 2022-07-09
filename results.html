@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+You have ${{down_payment}} for a down payment, nice!<br>
+${{budget}} is your maximum budget, that should do just fine.<br>
+Your insurance will cost approximately ${{insurance}} annually; insurance is such a scam.<br>
+Your interest rate is {{interest}}% that the banks steal from you.<br>
+Neighborhood preference: {{neighborhood}}<br>
+Commute preference: {{commute}}<br>
+Nightlife preference: {{nightlife}}<br>
+Cleaning appliance preference: {{cleaning}}<br>
+Nice to haves: {{nicetohaves}}<br>
+<h2>Welcome to your new home!</h2>
+<table>
+
+                    
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>Asking Price</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+<tbody>
+                      
+                        {% for results in tables %}
+                        <tr>
+                            <td>{{results.city }}</td>
+                            <td>{{results.asking_price}}</td>
+                            <td>{{results.link}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                  
+</table> 
+<h2>Estimated Monthly Payment</h2>
+<p>${{est_monthly_payment}}</p>
+{% endblock %}
+
+
+
+              
